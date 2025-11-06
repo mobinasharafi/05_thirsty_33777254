@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= shopName %> — About</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #4b132d; 
+      color: #000;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 34px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .leopard {
+      padding: 15px;
+      max-width: 580px;
+      border-radius: 8px;
+      border: 3px solid #000;
+      background-color: #fee9c3;
+      background-image:
+        radial-gradient(#bc9c76 3%, transparent 4%),
+        radial-gradient(#c5a565 6%, transparent 5%),
+        radial-gradient(#b29d65 4%, transparent 4%);
+      background-size: 50px 50px, 40px 40px, 60px 60px;
+      background-position: 0 0, 25px 25px, -20px -20px;
+      color: #000000;
+    }
+
+    .leopard p {
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "Garamond", serif;
+      letter-spacing: 0.6px;
+    }
+
+    /* Our branches list : Lab 5e */
+    .shops-label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #3a0730;
+      margin-bottom: 6px;
+    }
+
+    ul.shop-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 4px;
+    }
+
+    ul.shop-list li {
+      font-size: 12px;
+      color: #3a0730;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #fae5f6;
+      font-weight: bold;
+    }
+
+    .email-link {
+      color: #000000;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>About <%= shopName %> Shop</h1>
+
+  <div class="leopard">
+    <p><%= shopName %> is a drink shop focused on providing tasty drinks and a pleasent customer experience.</p>
+    <p>If you have any issues with an order, please contact us using the information below:</p>
+
+    <p><strong>contact us:</strong>
+      <a class="email-link" href="mailto:cherryandchillcontacts@gmail.com">
+        cherryandchillcontacts@gmail.com
+      </a>
+    </p>
+
+    <p class="shops-label">Our Shops:</p>
+    <ul class="shop-list">
+      <% shops.forEach(shop => { %>
+        <li><%= shop.name %> — Manager: <%= shop.manager %>, <%= shop.address %></li>
+      <% }); %>
+    </ul>
+  </div>
+
+  <p style="margin-top:20px;">
+    <a href="/">⬅ Back to Home Page</a>
+  </p>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <title>Survey — <%= shopName %></title>
+  <style>
+    body {
+      background:#ffe6f0;
+      font-family:"Georgia", serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      margin:0;
+      text-align:center;
+      color:#4d132d;
+    }
+
+    .card {
+      background:#fff1f7;
+      width:320px;
+      padding:18px 22px;
+      border-radius:12px;
+      border:2px solid #4d132d;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+
+    h2 {
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    input, select {
+      width:88%;
+      padding:7px;
+      margin:6px 0;
+      border-radius:6px;
+      border:1px solid #b77c93;
+      font-size:14px;
+    }
+
+    label {
+      font-size:13px;
+      font-weight:600;
+      display:block;
+      margin-top:6px;
+    }
+
+    button {
+      background:#6e1c34;
+      color:#fff;
+      padding:8px 14px;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      margin-top:12px;
+      font-size:14px;
+    }
+
+    a {
+      margin-top:12px;
+      font-size:12px;
+      color:#1a3c73;
+      text-decoration:underline;
+      display:block;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      width:auto;
+      margin-right:4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Quick Cherry & Chill Survey 🍒</h2>
+
+    <form action="/survey_submitted" method="POST">
+      <input type="text" name="first" placeholder="First name" required>
+      <input type="text" name="last" placeholder="Last name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="number" name="age" placeholder="Your age (18–100)" min="18" max="100" required>
+
+      <label>Favourite type of drink?</label>
+      <% productCategories.forEach(function(cat){ %>
+        <label>
+          <input type="radio" name="category" value="<%= cat %>" required> <%= cat %>
+        </label>
+      <% }) %>
+
+      <label>Your vibe tonight?</label>
+      <select name="mood" required>
+        <option disabled selected>Choose vibe…</option>
+        <option>Party animal</option>
+        <option>Deep conversations on a rainy night</option>
+        <option>Escaping the daily battles</option>
+        <option>Romantic</option>
+        <option>Girl’s night vibes</option>
+      </select>
+
+      <label><input type="checkbox" name="isStudent"> I’m a student</label>
+
+      <button type="submit">Submit ✅</button>
+    </form>
+
+    <a href="/">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>

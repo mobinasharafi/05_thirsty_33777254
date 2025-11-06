@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <title>Search Drinks - Cherry & Chill Liquors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8e8e8;
+      padding: 20px;
+    }
+    h1 {
+      color: #20354a;
+    }
+    .search-box {
+      background: #bdc7f4;
+      padding: 20px;
+      border-radius: 6px;
+      width: 380px; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    input[type="text"],
+    select {
+      width: 95%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #f0efef;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #67afdf;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background: #195c89;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Search for a drink here 🍹</h1>
+  <p> Let's find your favourite drink from our Cherry & Chill Liquors's menu!</p>
+
+  <div class="search-box">
+    <form action="/search_result" method="GET">
+      <!-- Task 6 Lab 5cd category becoming a selectable dropdown -->
+      <select name="category" required>
+        <option value="" selected disabled>Select category…</option>
+        <% for (let i = 0; i < productCategories.length; i++) { %>
+          <option value="<%= productCategories[i] %>"><%= productCategories[i] %></option>
+        <% } %>
+      </select>
+
+      <input id="search_box" type="text" name="search_text" placeholder="Enter a drink's name...">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+</body>
+</html>
+
+

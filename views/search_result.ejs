@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <title>Search Results — <%= shopName %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:#ffd6e5;
+      margin:0;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    h1 {
+      color:#4d2b10;
+      margin-bottom:16px;
+      font-family: Georgia, serif;
+    }
+    .circle{
+      background:#fff;
+      border:2px solid #6e1c34;
+      width:300px;height:300px;border-radius:50%;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding:16px;
+    }
+    .label{
+      color:#000000;
+      font-size:14px;
+      margin:0 0 4px;
+    }
+    .term{
+      font-family: Georgia, serif;
+      font-size:18px;
+      font-weight:600;
+      color:#6e1c34;
+      margin:0 0 8px 0;
+      transform: translateY(-10%);
+    }
+    .note{
+      color:#000000;
+      font-size:12px;
+      line-height:1.3;
+      margin:2px 0 10px;
+    }
+    a{
+      color:#1a3c73;
+      text-decoration:underline;
+      font-weight:bold;
+      font-size:13px;
+      line-height:1.25;
+    }
+    a:hover{
+      opacity:0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><%= shopName %></h1>
+
+  <div class="circle">
+    <p class="label">You searched for:</p>
+    <p class="term"><%= searchText %></p>
+
+    <p class="note">If available, our staff will sort it out for you. Until then, enjoy your time.</p>
+
+    <a href="/search">
+      Fancy another drink?<br>
+      Click and go back to<br>
+      The Search Bar
+    </a>
+  </div>
+</body>
+</html>

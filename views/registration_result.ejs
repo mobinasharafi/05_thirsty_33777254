@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>Welcome to the Cherry Crew 🍒</title>
+  <style>
+    body {
+      background:#ffdfeb;
+      font-family: Georgia, serif;
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .card {
+      background:#fff1f7;
+      border:2px solid #4d132d;
+      border-radius:10px;
+      padding:24px;
+      width:320px;
+      text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.12);
+    }
+    h1 {
+      color:#4d2b10;
+      margin:0 0 12px;
+    }
+    p {
+      color:#4d2b10;
+      font-size:15px;
+      margin:6px 0;
+    }
+    strong {
+      color:#6e1c34;
+    }
+    a {
+      display:inline-block;
+      margin-top:12px;
+      color:#1a3c73;
+      text-decoration:underline;
+      font-size:13px;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hey <%= first %> <%= last %>! </h1>
+    <p>You’re officially a part of the <strong>Cherry Crew</strong> now 🍒</p>
+    <p><em>Here are your credentials:</em></p>
+    <p><strong>Username:</strong> <%= username %></p>
+    <p><strong>Email:</strong> <%= email %></p>
+
+    <a href="/">⬅ Back to Home Page</a>
+  </div>
+</body>
+</html>

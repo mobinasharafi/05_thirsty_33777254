@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <title>Survey Result — <%= shopName %></title>
+  <style>
+    body {
+      background:#ffd6e5;
+      font-family: "Georgia", serif;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:0;
+      text-align:center;
+      color:#4d132d;
+    }
+    .card {
+      background:#fff1f7;
+      padding:25px;
+      width:350px;
+      border-radius:12px;
+      border:2px solid #4d132d;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    }
+    h2 { margin-bottom:10px; }
+    p { margin:6px 0; }
+    a { margin-top:10px; display:block; font-size:13px; text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Thanks <%= first %>! 🍒</h2>
+    <p>Age: <%= age %></p>
+    <p>Email: <%= email %></p>
+    <p>Favourite drink style: <%= category %></p>
+    <p>Mood tonight: “<%= mood %>”</p>
+    <p>Student: <%= student %></p>
+
+    <hr style="margin:12px 0;">
+
+    <p><strong>Your responses are telling us you should try:</strong></p>
+
+    <% if (mood === "Party animal") { %>
+      <p>Cherry & Chill Signature 🍒 — trust us here! </p>
+    <% } else if (mood === "Deep conversations on a rainy night") { %>
+      <p>Fine Wines 🍷 — mysterious, elegant and timeless</p>
+    <% } else if (mood === "Escaping the daily battles") { %>
+      <p>Fresh Mojitos 🍃 — escapism in a glass</p>
+    <% } else if (mood === "Romantic") { %>
+      <p>Classy Martinis 🍸 — seductive & sophisticated, feel the moment</p>
+    <% } else if (mood === "Girl’s night vibes") { %>
+      <p>Soft Drinks 🥤 or something sweet — cute and as enjoyable as it gets! </p>
+    <% } %>
+
+    <a href="/">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to <%= shopName %></title>
+    <style>
+      body {
+        background-color: #f3e1e8;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: #4d2b10;
+        font-family: Georgia, serif;
+        font-size: 34px;
+      }
+      h2 {
+        font-size: 18px;
+      } 
+      ul li {
+        font-family: "Georgia", serif;
+        font-size: 14.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= shopName %> Shop</h1>
+    <h2>Here is our drink selection — speak to the staff for extra requirements or contact us at cherryandchillcontacts@gmail.com</h2>
+    <ul>
+      <% for (let i = 0; i < productCategories.length; i++) { %>
+        <li><%= productCategories[i] %></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
