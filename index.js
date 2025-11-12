@@ -7,7 +7,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true })); // registration form body parser
 app.use(express.static("public")); // allow Express to serve CSS & images from "public" folder
 
-const port = 8000
+const port = process.env.PORT || 8000;
 
 // using EJS as the templating engine
 app.set('view engine', 'ejs');
@@ -17,4 +17,4 @@ const mainRoutes = require("./routes/main");
 app.use('/', mainRoutes);
 
 // Start the web app listening
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, '127.0.0.1', () => console.log(`App running on port ${port}!`));
