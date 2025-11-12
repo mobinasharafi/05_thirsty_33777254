@@ -36,8 +36,14 @@
       font-size:18px;
       font-weight:600;
       color:#6e1c34;
-      margin:0 0 8px 0;
+      margin:0 0 4px 0;
       transform: translateY(-10%);
+    }
+    .category{
+      font-size:13px;
+      font-weight:500;
+      color:#4d132d;
+      margin-bottom:8px;
     }
     .note{
       color:#000000;
@@ -64,6 +70,7 @@
   <div class="circle">
     <p class="label">You searched for:</p>
     <p class="term"><%= searchText %></p>
+    <p class="category">Category: <%= category %></p>
 
     <p class="note">If available, our staff will sort it out for you. Until then, enjoy your time.</p>
 
@@ -75,3 +82,4 @@
   </div>
 </body>
 </html>
+
